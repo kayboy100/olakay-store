@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="eC-site.css">
+</head>
+<body>
+  <nav class="navbar sticky-top">
+    <div class="container-fluid d-flex flex-wrap align-items-center justify-content-between sticky-top">
+    <div class="d-flex">
+        <div class="d-md-none d-flex justify-content-between align-items-center border-bottom">
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" style="border: none; border-radius: 0px;">
+            <i class="bi bi-list h3" style="font-size: 1.5rem; color: black;"></i>
+        </button>
+    </div>
+
+<!-- Offcanvas Sidebar -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Categories</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="list-group shadow mt-5 ms-4">
+        <a href="#" class="list-group-item list-group-item-action">Appliances</a>
+        <a href="#" class="list-group-item list-group-item-action">Phones & Tablets</a>
+        <a href="#" class="list-group-item list-group-item-action">Health & Beauty</a>
+        <a href="#" class="list-group-item list-group-item-action">Home & Office</a>
+        <a href="#" class="list-group-item list-group-item-action">Electronics</a>
+        <a href="#" class="list-group-item list-group-item-action">Fashion</a>
+        <a href="#" class="list-group-item list-group-item-action">Computing</a>
+        <a href="#" class="list-group-item list-group-item-action">Baby products</a>
+        <a href="#" class="list-group-item list-group-item-action">Musical Instrunment</a>
+        <a href="#" class="list-group-item list-group-item-action">Other categories</a>
+      </div>
+  </div>
+</div>
+        <!-- Logo -->
+      <a class="navbar-brand fw-bold fs-4 me-3" href="index.html">
+        Olakay<span>Store</span><img src="1000113088-removebg-preview.png" alt="" class="img-fluid ps-0" style="width: 50px;">
+      </a>
+    </div>
+      
+
+      <!-- Icons (right side) -->
+      <div class="d-flex align-items-center gap-4 gap-md-3 gap-sm-4 order-2 order-lg-3 ms-auto me-2">
+        <a href="#" class="nav-icon"><i class="bi bi-person h4" style="font-size: 1.6rem;"></i><span>Account</span></a>
+        <a href="cart.html" class="nav-icon d-lg-flex d-md-flex d-sm-flex d-flex"><i class="bi bi-cart h3 d-flex" style="font-size: 1.4rem; float: right;"></i>
+        <span id="cart-badge" class="position-absolute mb-5 ms-2 badge rounded-pill bg-danger" style="display: none;"></span><span>Cart</span></a>
+      </div>
+
+      <!-- Search Bar (middle) -->
+      <form class="search-bar mx-auto order-3 order-lg-2 flex-grow-1">
+        <i class="bi bi-search"></i> <input type="search" placeholder="Search products...">
+        <button type="submit"></button>
+      </form>
+
+    </div>
+</nav>
+
+<div class="container-lg product-shell">
+    <div class="row g-3">
+      <!-- main left: details (col-lg-9) -->
+      <div class="col-12 col-lg-9">
+        <div class="product-card-main">
+          <div class="row g-3">
+            <!-- images column -->
+            <div class="col-12 col-md-5 col-lg-4 d-flex flex-column align-items-center">
+              <div class="product-images w-100 text-center">
+                <div class="main-image-wrap">
+                  <img id="mainImage" src="maincomHPCardmdhdh.jpg" alt="Product image" class="product-main-img">
+                </div>
+                  <div class="image-strip" id="imageStrip" aria-hidden="true">......</div>
+
+                <div class="thumbs-wrap">
+                  <button id="thumbPrev" class="thumb-arrow" aria-label="Previous thumbnails"><</button>
+                  <div class="thumbs-carousel" id="thumbsCarousel" role="list"></div>
+                  <button id="thumbNext" class="thumb-arrow" aria-label="Next thumbnails">></button>
+                </div>
+              </div>
+
+              <div id="imageOverlay" class="image-overlay" aria-hidden="true" role="dialog" aria-label="Image gallery">
+                <button id="overlayClose" class="overlay-close" aria-label="Close overlay">&times;</button>
+                <div class="overlay-viewport">
+                  <div id="overlayStrip" class="overlay-strip"></div>
+                </div>
+                <div id="overlayThumbs" class="overlay-thumbs"></div>
+              </div>
+            </div>
+
+            <!-- details column -->
+            <div class="col-12 col-md-7 col-lg-8">
+              <div>
+                <div id="productTitle" class="title">Loading...</div>
+                <div class="mb-2">
+                  <span id="productPrice" class="price">₦0</span>
+                  <span id="productOldPrice" class="old-price"></span>
+                  <span id="productDiscount" class="discount-pill" style="display:none"></span>
+                </div>
+
+                <div class="mb-2" id="ratingRow"></div>
+
+                <p id="productBrand"></p>
+                <div id="productShort" class="mb-3 text-muted"></div>
+
+                <div class="row gx-2">
+                  <div class="col-6 col-sm-4 col-md-5">
+                    <div class="qty">
+                      <label class="me-2">Qty</label>
+                      <div class="input-group" style="box-shadow: none; outline: none; border: none;">
+                        <button id="qtyMinus" class="btn btn-outline-secondary" type="button">-</button>
+                        <input id="qtyInput" type="number" min="1" value="1" class="form-control" />
+                        <button id="qtyPlus" class="btn btn-outline-secondary" type="button">+</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-8 col-md-7 d-flex align-items-center">
+                    <button id="addToCartBtn" class="btn-cta ms-auto">Add to cart</button>
+                  </div>
+                </div>
+                <div class="mt-3 text-end me-2">
+                  <a id="cartBtn" href="cart.html" class="btn btn-warning w-25">View cart</a>
+                </div>
+              </div>
+            </div> <!-- end details column -->
+          </div> <!-- end nested row -->
+
+          <!-- tabs: description / specs / reviews -->
+          <hr class="my-3">
+          <ul class="nav nav-tabs" id="prodTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc" type="button">Description</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button">Specifications</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="rev-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button">Reviews</button>
+            </li>
+          </ul>
+          <div class="tab-content mt-3">
+            <div class="tab-pane fade show active" id="desc"> <div id="descContent">Loading description...</div>
+            <br> <hr>
+            <h4 id="theBox">What's in the box?</h4>
+            <li id="liBox" style="list-style-type: none;"></li> <br> <hr>
+            <li id="liBox?" class="fw-bold text-danger" style="list-style-type: none;"></li>
+            </div>
+            <div class="tab-pane fade" id="specs"> <div id="specsContent"><!--Key specs here (you can fill)--> ....</div> </div>
+            <div class="tab-pane fade" id="reviews"> <div id="reviewsContent">Reviews Unavailable</div> </div>
+          </div>
+
+        </div> <!-- product-card-main -->
+      </div>
+
+      <!-- right column: delivery info (col-lg-3) -->
+      <div class="col-12 col-lg-3">
+        <div class="delivery-card">
+          <h6 class="mb-2">Delivery & Returns</h6>
+          <div class="mb-2">
+            <label class="form-label">Choose your location</label>
+            <select class="form-select mb-2">
+              <option>Lagos</option>
+              <option>Abuja</option>
+            </select>
+            <select class="form-select">
+              <option>LEKKI-AJAH (SANGOTEDO)</option>
+              <option>Ikorodu garage</option>
+              <option>Surulere</option>
+              <option>Bariga</option>
+            </select>
+          </div>
+
+          <div class="mb-2">
+            <strong>Pickup Station</strong>
+            <div class="small text-muted">Delivery fees ₦1,500</div>
+          </div>
+          <div class="mb-2">
+            <strong>Door Delivery</strong>
+            <div class="small text-muted">Delivery fees ₦2,500</div>
+          </div>
+          <div class="mb-2">
+            <strong>Return Policy</strong>
+            <div class="small text-muted">Free returns within 7 days for eligible items</div>
+          </div>
+          <div class="mb-2">
+            <strong>Warranty</strong>
+            <div class="small text-muted">1 year standard</div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- row -->
+  </div> <!-- container -->
+
+  <div id="snackbar" class="snackbar">Added to cart</div>
+
+  <!-- scripts: products.js must load before cart.js -->
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+
+  <script>
+  // helper: get id from URL
+  function getProductIdFromUrl() {
+    return new URLSearchParams(window.location.search).get('id');
+  }
+
+  // small formatter
+  function formatNaira(n){ return '₦' + (n||0).toLocaleString(); }
+
+  // page state
+  let PID = null;
+  let PRODUCT = null;
+
+  // render functions
+  function renderProduct(product) {
+    if (!product) {
+      document.getElementById('productTitle').textContent = 'Product not found';
+      document.getElementById('productPrice').textContent = formatNaira(0);
+      return;
+    }
+    document.title = product.name + ' — Olakay Store';
+    document.getElementById('productTitle').textContent = product.name;
+    document.getElementById('productPrice').textContent = formatNaira(product.price);
+    document.getElementById('productOldPrice').textContent = product.oldPrice ? formatNaira(product.oldPrice) : '';
+    if (product.discountPercent && product.discountPercent > 0) {
+      const d = document.getElementById('productDiscount');
+      d.textContent = `-${product.discountPercent}%`;
+      d.style.display = 'inline-block';
+    } else {
+      document.getElementById('productDiscount').style.display = 'none';
+    }
+    // rating
+    const r = document.getElementById('ratingRow');
+    r.innerHTML = '';
+    const starCount = Math.floor(product.rating || 0);
+    for (let i=0;i<starCount;i++) r.innerHTML += '<i class="bi bi-star-fill" style="color:#f59b00"></i> ';
+    if ((product.rating - starCount) >= 0.5) r.innerHTML += '<i class="bi bi-star-half" style="color:#f59b00"></i> ';
+    r.innerHTML += ` <small class="text-muted"> (${product.reviews || 0} reviews)</small>`;
+    document.getElementById('productBrand').textContent = `Brand:   ${product.brand}`
+    document.getElementById('descContent').textContent = product.description || '';
+    document.getElementById('liBox').textContent = product.descList
+    document.getElementById('liBox?').textContent = `NOTE: ${product.descLiNote}`
+
+    initProductGallery(product.images);
+
+    // ---------- Gallery helper ----------
+function initProductGallery(images = []) {
+  // ensure images is an array of URLs
+  if (!Array.isArray(images)) images = [];
+
+  const thumbsCarousel = document.getElementById('thumbsCarousel');
+  const thumbPrev = document.getElementById('thumbPrev');
+  const thumbNext = document.getElementById('thumbNext');
+  const imageStrip = document.getElementById('imageStrip');
+  const overlayClose = document.getElementById('overlayClose');
+  const overlayStrip = document.getElementById('overlayStrip');
+  const overlayThumbs = document.getElementById('overlayThumbs');
+
+  const main = document.getElementById('mainImage');
+    const overlay = document.getElementById('imageOverlay');
+    if (main && overlay) {
+        main.addEventListener('click', () => {
+            overlay.classList.add('open');
+            overlay.setAttribute('aria-hidden', 'false');
+        });
+    }
+
+  // fill main image (desktop)
+  if (main) main.src = images[0] || '';
+
+  // build thumbs (desktop and overlay)
+  thumbsCarousel.innerHTML = '';
+  overlayThumbs.innerHTML = '';
+  images.forEach((src, idx) => {
+    const t = document.createElement('img');
+    t.src = src;
+    t.alt = `Thumbnail ${idx+1}`;
+    t.dataset.index = idx;
+    if (idx === 0) t.classList.add('active-thumb');
+    thumbsCarousel.appendChild(t);
+
+    const ot = t.cloneNode();
+    ot.dataset.index = idx;
+    overlayThumbs.appendChild(ot);
+  });
+
+  // desktop thumbnail click -> set main image and active state
+  thumbsCarousel.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', () => {
+      const i = Number(img.dataset.index);
+      setActiveThumb(i);
+      if (main) main.src = images[i] || '';
+    });
+  });
+
+  // overlay thumbnail clicks
+  overlayThumbs.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', () => {
+      const i = Number(img.dataset.index);
+      openOverlayAt(i);
+    });
+  });
+
+  // arrow scroll for thumbsCarousel
+  function scrollThumbs(delta) {
+    const el = thumbsCarousel;
+    const w = el.clientWidth;
+    el.scrollBy({ left: delta * (w * 0.6), behavior: 'smooth' });
+  }
+  if (thumbPrev) thumbPrev.addEventListener('click', () => scrollThumbs(-1));
+  if (thumbNext) thumbNext.addEventListener('click', () => scrollThumbs(+1));
+
+  // mobile image strip (create slides)
+  imageStrip.innerHTML = '';
+  images.forEach((src, idx) => {
+    const s = document.createElement('img');
+    s.src = src;
+    s.className = 'product-slide';
+    s.dataset.index = idx;
+    imageStrip.appendChild(s);
+  });
+
+  // when user scrolls strip on mobile, highlight the corresponding thumb in overlayThumbs (sync active)
+  let stripTimeout;
+  imageStrip.addEventListener('scroll', () => {
+    clearTimeout(stripTimeout);
+    stripTimeout = setTimeout(() => {
+      // compute nearest index
+      const children = Array.from(imageStrip.querySelectorAll('.product-slide'));
+      const center = imageStrip.scrollLeft + (imageStrip.clientWidth / 2);
+      let best = 0;
+      let bestDist = Infinity;
+      children.forEach((c, i) => {
+        const left = c.offsetLeft + c.offsetWidth/2;
+        const d = Math.abs(left - center);
+        if (d < bestDist) { bestDist = d; best = i; }
+      });
+      // when mobile scroll finishes, update overlay thumbnails active state
+      overlayThumbs.querySelectorAll('img').forEach(t => t.classList.remove('active-thumb'));
+      const oactive = overlayThumbs.querySelector(`img[data-index="${best}"]`);
+      if (oactive) oactive.classList.add('active-thumb');
+    }, 80);
+  });
+
+  // MAIN IMAGE CLICK:
+  // - on mobile open overlay at the currently visible index
+  // - on desktop open overlay at currently selected thumb index
+  function getCurrentIndex() {
+    // preference: active thumb in desktop
+    const a = thumbsCarousel.querySelector('img.active-thumb');
+    if (a) return Number(a.dataset.index || 0);
+    // fallback: strip center
+    let best = 0, bestDist = Infinity;
+    const children = Array.from(imageStrip.querySelectorAll('.product-slide'));
+    const center = imageStrip.scrollLeft + (imageStrip.clientWidth / 2);
+    children.forEach((c, i) => {
+      const left = c.offsetLeft + c.offsetWidth/2;
+      const d = Math.abs(left - center);
+      if (d < bestDist) { bestDist = d; best = i; }
+    });
+    return best;
+  }
+
+  if (main) main.addEventListener('click', () => {
+    const idx = getCurrentIndex();
+    openOverlayAt(idx);
+  });
+  imageStrip.querySelectorAll('.product-slide').forEach(slide => {
+    slide.addEventListener('click', () => {
+      const i = Number(slide.dataset.index);
+      openOverlayAt(i);
+    });
+  });
+
+  // overlay rendering
+  function openOverlayAt(index = 0) {
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    overlayStrip.innerHTML = '';
+    images.forEach((src, i) => {
+      const im = document.createElement('img');
+      im.src = src;
+      im.dataset.index = i;
+      overlayStrip.appendChild(im);
+    });
+    // scroll to the chosen image
+    setTimeout(() => {
+      const child = overlayStrip.querySelector(`img[data-index="${index}"]`);
+      if (child) child.scrollIntoView({ behavior: 'auto', inline: 'center' });
+      // mark active thumbnail inside overlay
+      overlayThumbs.querySelectorAll('img').forEach(t => t.classList.remove('active-thumb'));
+      const oactive = overlayThumbs.querySelector(`img[data-index="${index}"]`);
+      if (oactive) oactive.classList.add('active-thumb');
+    }, 60);
+  }
+
+  function closeOverlay() {
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    overlayStrip.innerHTML = '';
+  }
+
+  overlayClose.addEventListener('click', closeOverlay);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeOverlay(); // click outside content closes
+  });
+
+  // double-tap / double click to zoom in overlay
+  let lastTap = 0;
+  overlayStrip.addEventListener('click', (e) => {
+    const now = Date.now();
+    if (now - lastTap < 300) {
+      // double tap: toggle zoom class on clicked image
+      const img = e.target.closest('img');
+      if (img) img.classList.toggle('zoomed');
+    }
+    lastTap = now;
+  });
+
+  // overlay swipe handling: keep simple—native scroll works; also update active thumb as overlay scrolls
+  let overlayScrollTimeout;
+  overlayStrip.addEventListener('scroll', () => {
+    clearTimeout(overlayScrollTimeout);
+    overlayScrollTimeout = setTimeout(() => {
+      // find current centered index like earlier
+      let best = 0, bestDist = Infinity;
+      const children = Array.from(overlayStrip.querySelectorAll('img'));
+      const center = overlayStrip.scrollLeft + (overlayStrip.clientWidth / 2);
+      children.forEach((c, i) => {
+        const left = c.offsetLeft + c.offsetWidth/2;
+        const d = Math.abs(left - center);
+        if (d < bestDist) { bestDist = d; best = i; }
+      });
+      // set active overlay thumbnail
+      overlayThumbs.querySelectorAll('img').forEach(t => t.classList.remove('active-thumb'));
+      const oactive = overlayThumbs.querySelector(`img[data-index="${best}"]`);
+      if (oactive) oactive.classList.add('active-thumb');
+    }, 80);
+  });
+
+  // helper: set active thumb in desktop thumbs
+  function setActiveThumb(i) {
+    thumbsCarousel.querySelectorAll('img').forEach(t => t.classList.remove('active-thumb'));
+    const active = thumbsCarousel.querySelector(`img[data-index="${i}"]`);
+    if (active) active.classList.add('active-thumb');
+
+    // ensure the active thumb is visible (scroll into view inside thumbsCarousel)
+    active && active.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+  }
+
+  // initial active
+  setActiveThumb(0);
+}
+  }
+  
+
+  // small toast (uses existing snackbar)
+  function showToast(msg='Added to cart') {
+    const s = document.getElementById('snackbar');
+    if (!s) { alert(msg); return; }
+    s.textContent = msg; s.style.display = 'block'; s.style.opacity = '1';
+    setTimeout(()=>{ s.style.opacity = '0'; setTimeout(()=> s.style.display='none',300); }, 1100);
+  }
+
+  // main wiring
+  document.addEventListener('DOMContentLoaded', () => {
+    // ensure cart badge is inited
+    if (typeof updateCartBadge === 'function') updateCartBadge();
+
+    PID = getProductIdFromUrl() || 'p1'; // fallback
+    PRODUCT = (typeof PRODUCTS !== 'undefined') ? PRODUCTS.find(p => p.id === PID) : null;
+
+    renderProduct(PRODUCT);
+
+    // qty buttons
+    const qtyInput = document.getElementById('qtyInput');
+    const plus = document.getElementById('qtyPlus');
+    const minus = document.getElementById('qtyMinus');
+    if (plus) plus.addEventListener('click', ()=> { qtyInput.value = Number(qtyInput.value || 1) + 1; });
+    if (minus) minus.addEventListener('click', ()=> { qtyInput.value = Math.max(1, Number(qtyInput.value || 1) - 1); });
+
+    // single Add-to-cart handler (PASS id & qty)
+    const addBtn = document.getElementById('addToCartBtn');
+    if (addBtn) {
+      addBtn.addEventListener('click', () => {
+        const qty = Math.max(1, parseInt(qtyInput.value || 1, 10));
+        // use addToCart(id, qty) signature from cart.js
+        const ok = (typeof addToCart === 'function') ? addToCart(PID, qty) : false;
+        if (ok) {
+          if (typeof updateCartBadge === 'function') updateCartBadge();
+          showToast('Added to cart');
+        } else {
+          showToast('Error adding to cart');
+        }
+      });
+    }
+
+    // Buy now button: add and go to checkout
+    const buyNow = document.getElementById('buyNowBtn');
+    if (buyNow) buyNow.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const qty = Math.max(1, parseInt(qtyInput.value || 1, 10));
+      if (typeof addToCart === 'function') addToCart(PID, qty);
+      if (typeof updateCartBadge === 'function') updateCartBadge();
+      window.location.href = 'checkout.html';
+    });
+  });
+</script>
+
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
