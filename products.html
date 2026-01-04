@@ -56,10 +56,9 @@
 
       <!-- Search Bar (middle) -->
       <form class="search-bar mx-auto order-3 order-lg-2 flex-grow-1">
-        <i class="bi bi-search"></i> <input type="search" placeholder="Search products...">
-        <button type="submit"></button>
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Search products..." id="searchInput">
       </form>
-
     </div>
 </nav>
 
@@ -105,7 +104,7 @@
 
                 <div class="mb-2" id="ratingRow"></div>
 
-                <p id="productBrand"></p>
+                <p id="productBrand" class="text-danger"></p>
                 <div id="productShort" class="mb-3 text-muted"></div>
 
                 <div class="row gx-2">
@@ -147,8 +146,8 @@
             <div class="tab-pane fade show active" id="desc"> <div id="descContent">Loading description...</div>
             <br> <hr>
             <h4 id="theBox">What's in the box?</h4>
-            <li id="liBox" style="list-style-type: none;"></li> <br> <hr>
-            <li id="liBox?" class="fw-bold text-danger" style="list-style-type: none;"></li>
+            <li id="liBox" style="list-style-type: none;"></li> <hr>
+            <li id="note" class="fw-bold text-danger" style="list-style-type: none;">NOTE:</li>
             </div>
             <div class="tab-pane fade" id="specs"> <div id="specsContent"><!--Key specs here (you can fill)--> ....</div> </div>
             <div class="tab-pane fade" id="reviews"> <div id="reviewsContent">Reviews Unavailable</div> </div>
@@ -241,10 +240,11 @@
     for (let i=0;i<starCount;i++) r.innerHTML += '<i class="bi bi-star-fill" style="color:#f59b00"></i> ';
     if ((product.rating - starCount) >= 0.5) r.innerHTML += '<i class="bi bi-star-half" style="color:#f59b00"></i> ';
     r.innerHTML += ` <small class="text-muted"> (${product.reviews || 0} reviews)</small>`;
-    document.getElementById('productBrand').textContent = `Brand:   ${product.brand}`
+    document.getElementById('productBrand').textContent = `Brand: ${product.brand}`
     document.getElementById('descContent').textContent = product.description || '';
     document.getElementById('liBox').textContent = product.descList
-    document.getElementById('liBox?').textContent = `NOTE: ${product.descLiNote}`
+    document.getElementById('note').textContent = product.descLiNote
+
 
     initProductGallery(product.images);
 

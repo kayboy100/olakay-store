@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="eC-site.css">
 </head>
-<body>
+<body class="nav-icons-only">
   <nav class="navbar sticky-top">
     <div class="container-fluid d-flex flex-wrap align-items-center justify-content-between sticky-top">
     <div class="d-flex">
@@ -47,23 +47,24 @@
       
 
       <!-- Icons (right side) -->
-      <div class="d-flex align-items-center gap-5 gap-md-3 gap-sm-4 order-2 order-lg-3 ms-auto me-2">
-        <a href="#" class="nav-icon"><i class="bi bi-person h4" style="font-size: 1.6rem;"></i><span>Account</span></a>
-        <a href="cart.html" class="nav-link nav-icon d-lg-flex d-md-flex d-sm-flex d-none"><i class="bi bi-cart h3 d-flex" style="font-size: 1.4rem; float: right;"></i><span id="cart-badge" class="position-absolute mb-5 ms-2 badge rounded-pill bg-danger" style="display: none;">0</span>Cart</a>
+      <div class="d-flex align-items-center gap-4 order-2 order-lg-3 ms-auto me-2">
+        <button id="searchIcon" class="nav-icon"><i class="bi bi-search h4" style="font-size: 1.8rem; font-weight: 500;"></i></button>
+        <a href="#" class="nav-icon"><i class="bi bi-person h4" style="font-size: 2.2rem; font-weight: 500;"></i><span>Account</span></a>
+        <a href="cart.html" class="nav-icon d-lg-flex d-md-flex d-sm-flex d-flex"><i class="bi bi-cart h3 d-flex" style="font-size: 1.7rem; float: right; font-weight: 500;"></i>
+        <span id="cart-badge" class="position-absolute mb-5 ms-2 badge rounded-pill bg-danger" style="display: none;"></span><span>Cart</span></a>
       </div>
 
       <!-- Search Bar (middle) -->
       <form class="search-bar mx-auto order-3 order-lg-2 flex-grow-1">
-        <input type="search" placeholder="Search products...">
-        <button type="submit"><i class="bi bi-search"></i></button>
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Search products..." id="searchInput">
       </form>
-
     </div>
 </nav>
 
      <!-- ✅ Cart Content -->
   <div class="container my-4">
-    <h1 class="mb-5 fw-bold text-center text-primary" style="text-shadow: 2px 2px goldenrod;">Shopping Cart <img src="1000113088-removebg-preview.png" alt="" style="width: 100px; height: 90px;"></h1>
+    <h4 class="mb-5 fw-bold text-center text-primary" style="text-shadow: 2px 2px goldenrod;">Shopping Cart <img src="1000113088-removebg-preview.png" alt="" style="width: 45px; height: 35px;"></h4>
     <div id="emptyCartMsg" class="container text-muted text-center mt-5" style="display:none;">
       <h4>Your cart is empty<i class="bi bi-cart h3"></i></h4>
       <a class="btn btn-lg fw-bold btn-add mt-5" href="eC-site-Shop.html">SHOP NOW</a>

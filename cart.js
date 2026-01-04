@@ -121,9 +121,9 @@ function renderCartPage() {
         </div>
 
         <div class="col">
-          <p class="mb-1"><small>${item.name}</small></h6>
+          <p class="cart-prodName mb-1"><small>${item.name}</small></p>
           <p class="mb-1 text-muted"><small>₦${(Number(item.price)||0).toLocaleString()}</small></p>
-          <p class="mb-0 small text-muted">Line total: ₦${lineTotal.toLocaleString()} <small><small>x${item.qty}</small></small></p>
+          <p class="mb-0 small text-muted"><strong>Line total:</strong> ₦${lineTotal.toLocaleString()} <small><small>x${item.qty}</small></small></p>
           <p class="mb-0 small text-muted"></p>
         </div>
           <div class="bottom-controls mt-3">
@@ -135,7 +135,7 @@ function renderCartPage() {
 
             <div class="qty-wrap">
               <div class="qty-controls">
-                <button class="btn-qty btn-qty-minus" data-id="${item.id}" type="button">━</button>
+                <button class="btn-qty btn-qty-minus" data-id="${item.id}" type="button">-</button>
                 <div class="qty-display">${item.qty}</div>
                 <button class="btn-qty btn-qty-plus" data-id="${item.id}" type="button">+</button>
               </div>
@@ -166,6 +166,9 @@ function renderCartPage() {
     });
   });
 }
+searchIcon.addEventListener("click", () => {
+  window.location.href = "eC-site-Shop.html";
+});
 
 // ensure cart UI shows when cart page loads and when storage changes
 document.addEventListener("DOMContentLoaded", renderCartPage);

@@ -96,13 +96,13 @@
         <img class="chk-img" src="${item.image || 'placeholder.png'}" alt="${escapeHtml(item.name)}">
         <div style="min-width: 0;">
           <p class="chk-name">${escapeHtml(item.name)}</p>
-          <p class="chk-meta">₦${Number(item.price).toLocaleString()} &times; ${item.qty}</p>
+          <p class="chk-meta mb-3">₦${Number(item.price).toLocaleString()} &times; ${item.qty}</p>
           <div style="margin-top:6px;">
             <div class="qty-controls">
               <button class="btn-qty-minus" data-id="${item.id}" type="button">−</button>
               <input class="qty-input" data-id="${item.id}" type="number" value="${item.qty}" min="1">
               <button class="btn-qty-plus" data-id="${item.id}" type="button">+</button>
-              <button class="btn btn-link btn-sm text-danger remove-item" data-id="${item.id}" style="margin-left:8px;">Remove</button>
+              <button class="btn btn-sm btn-outline-danger text-danger remove-item ms-3" data-id="${item.id}">Remove</button>
             </div>
           </div>
         </div>
@@ -207,7 +207,7 @@
     setTimeout(()=> {
       showToast('Order placed — demo');
       // optional: redirect to a thank-you page
-      // window.location.href = 'order-success.html';
+      window.location.href = 'order-success.html';
       renderOrderSummary();
     }, 800);
   });

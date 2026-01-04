@@ -9,8 +9,61 @@
     <link rel="stylesheet" href="eC-site.css">
 </head>
 </head>
-<body>
-    
+<body class="nav-icons-only">
+  <nav class="navbar sticky-top">
+    <div class="container-fluid d-flex flex-wrap align-items-center justify-content-between sticky-top">
+    <div class="d-flex">
+        <div class="d-md-none d-flex justify-content-between align-items-center border-bottom">
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" style="border: none; border-radius: 0px;">
+            <i class="bi bi-list h3" style="font-size: 1.5rem; color: black;"></i>
+        </button>
+    </div>
+
+<!-- Offcanvas Sidebar -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Categories</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="list-group shadow mt-5 ms-4">
+        <a href="#" class="list-group-item list-group-item-action">Appliances</a>
+        <a href="#" class="list-group-item list-group-item-action">Phones & Tablets</a>
+        <a href="#" class="list-group-item list-group-item-action">Health & Beauty</a>
+        <a href="#" class="list-group-item list-group-item-action">Home & Office</a>
+        <a href="#" class="list-group-item list-group-item-action">Electronics</a>
+        <a href="#" class="list-group-item list-group-item-action">Fashion</a>
+        <a href="#" class="list-group-item list-group-item-action">Computing</a>
+        <a href="#" class="list-group-item list-group-item-action">Baby products</a>
+        <a href="#" class="list-group-item list-group-item-action">Musical Instrunment</a>
+        <a href="#" class="list-group-item list-group-item-action">Other categories</a>
+      </div>
+  </div>
+</div>
+        <!-- Logo -->
+      <a class="navbar-brand fw-bold fs-4 me-3" href="index.html">
+        Olakay<span>Store</span><img src="1000113088-removebg-preview.png" alt="" class="img-fluid ps-0" style="width: 50px;">
+      </a>
+    </div>
+      
+
+      <!-- Icons (right side) -->
+      <div class="d-flex align-items-center gap-4 order-2 order-lg-3 ms-auto me-2">
+        <button id="searchIcon" class="nav-icon"><i class="bi bi-search h4"></i></button>
+        <a href="#" class="nav-icon"><i class="bi bi-person h4" style="font-size: 1.6rem;"></i><span>Account</span></a>
+        <a href="cart.html" class="nav-icon d-lg-flex d-md-flex d-sm-flex d-flex"><i class="bi bi-cart h3 d-flex" style="font-size: 1.4rem; float: right;"></i>
+        <span id="cart-badge" class="position-absolute mb-5 ms-2 badge rounded-pill bg-danger" style="display: none;"></span><span>Cart</span></a>
+      </div>
+
+      <!-- Search Bar (middle) -->
+      <form class="search-bar mx-auto order-3 order-lg-2 flex-grow-1">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Search products..." id="searchInput">
+      </form>
+    </div>
+</nav>
+  
+
 <main class="container-lg checkout-shell">
     <div class="row">
       <!-- left: checkout form (8 cols on large) -->

@@ -23,7 +23,8 @@ const PRODUCTS = [
       " AC power adapter + power cord",
       " Quick Start Guide / documentation + warranty card",
       " Protective bag (as per bundle)"
-    ]
+    ],
+    descLiNote: ""
   },
   {
     id: "p2",
@@ -47,7 +48,8 @@ const PRODUCTS = [
       " 35W Dual USB‑C Power Adapter",
       " USB‑C to MagSafe 3 Cable (2 m)",
       " Documentation / Quick Start Guide"
-    ]
+    ],
+    descLiNote: ""
   },
   {
     id: "p3",
@@ -71,7 +73,8 @@ const PRODUCTS = [
       " USB‑C charging/data cable",
       " 20W USB‑C Power Adapter",
       " Documentation / Quick Start Guide"
-    ]
+    ],
+    descLiNote: ""
   },
   {
     id: "p4",
@@ -94,7 +97,8 @@ const PRODUCTS = [
       " USB‑C charging/data cable",
       " USB‑C charging/data cable",
       " 20W USB‑C Power Adapter"
-    ]
+    ],
+    descLiNote: ""
   },
   {
     id: "p5",
@@ -136,7 +140,8 @@ const PRODUCTS = [
       " FreePods earbuds (pair or single earbud, depending on SKU)",
       " Charging / carry case (if applicable)",
       " USB‑C (or micro-USB) charging cable"
-    ]
+    ],
+    descLiNote: ""
   },
   {
     id: "p7",
@@ -158,7 +163,8 @@ const PRODUCTS = [
       " USB charging cable (if wireless) or 3.5 mm audio cable (if wired)",
       " User manual / warranty card",
       " Carrying pouch or protective bag (if included by seller / bundle)"
-    ]
+    ],
+    descLiNote: ""
   },
   {
     id: "p8",
@@ -179,7 +185,8 @@ const PRODUCTS = [
       " Charging case (if part of the model) or USB charging cable",
       " Extra ear tip(s) (where applicable)",
       " Quick Start Guide / warranty card"
-    ]
+    ],
+    descLiNote: ""
   },
   {
     id: "p9",
@@ -204,7 +211,8 @@ const PRODUCTS = [
       " USB‑C charging cable",
       " AUX (3.5 mm) audio cable (if model supports wired mode)",
       " User manual / warranty card"
-    ]
+    ],
+    descLiNote: ""
   },
   {
     id: "p10",
@@ -248,7 +256,8 @@ const PRODUCTS = [
       " USB‑C charging/data cable",
       " Quick Start Guide / documentation / SIM eject tool",
       " Free gift (as per your store bundle"
-    ]
+    ],
+    descLiNote: ""
   },
   {
     id: "p12",
@@ -271,7 +280,8 @@ const PRODUCTS = [
       "HP ProBook 640 laptop",
       " AC power adapter + power cord",
       " Quick Start Guide / documentation / warranty card"
-    ]
+    ],
+    descLiNote: ""
   },
   // TO BE CONTINUED
   {

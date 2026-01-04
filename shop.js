@@ -115,3 +115,8 @@ const swiper = new Swiper("#promoSwiper", {
   },
   grabCursor: true,
 });
+document.querySelectorAll('.btn-add').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+});
