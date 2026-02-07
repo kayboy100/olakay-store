@@ -2,6 +2,72 @@
 
 const PRODUCTS = [
   {
+    id: "h3",
+    name: "Danami Pack Of 3 Plain Sleeveless Hooded T Shirt- Black, White & Ash",
+    brand: "Air Max",
+    price: 19999,
+    oldPrice: null,
+    images: [
+      "ecF&S coth4.jpg",
+    ],
+    rating: 3,
+    reviews: 22,
+    sponsored: true,
+    discountPercent: null,
+    description: "A feature-packed headphone for those who want immersive sound, mobility, and versatility. With Bluetooth 5.3, over‑ear design, noise cancellation (if supported), and support for TF card (offline playback), the Air Max 2 is ideal for music lovers, travelers, students, or anyone who values flexibility — whether streaming from phone or listening offline. Great balance of convenience and high‑quality listening.",
+    descList: [
+      "Air Max 2 headphone unit",
+      " USB‑C charging cable",
+      " AUX (3.5 mm) audio cable (if model supports wired mode)",
+      " User manual / warranty card"
+    ],
+    descLiNote: ""
+  },
+  {
+    id: "h4",
+    name: "kojic White kojic Gluta Papaya Whitening Soap (With Arbutin)x2",
+    brand: "Kojik",
+    price: 6500,
+    oldPrice: null,
+    images: [
+      "ecF&S kojic sop.jpg",
+    ],
+    rating: 3,
+    reviews: 22,
+    sponsored: true,
+    discountPercent: null,
+    description: "A feature-packed headphone for those who want immersive sound, mobility, and versatility. With Bluetooth 5.3, over‑ear design, noise cancellation (if supported), and support for TF card (offline playback), the Air Max 2 is ideal for music lovers, travelers, students, or anyone who values flexibility — whether streaming from phone or listening offline. Great balance of convenience and high‑quality listening.",
+    descList: [
+      "Air Max 2 headphone unit",
+      " USB‑C charging cable",
+      " AUX (3.5 mm) audio cable (if model supports wired mode)",
+      " User manual / warranty card"
+    ],
+    descLiNote: ""
+  },
+  {
+    id: "h6",
+    name: "Nivea Cherry Blossom & Jojoba Oil Infused Body Lotion transforms dry skin into radiant, soft skin with a lovely Cherry Blossom scent.",
+    brand: "NIVEA",
+    price: 1500,
+    oldPrice: null,
+    images: [
+      "ecF&S kojic sop.jpg",
+    ],
+    rating: 3,
+    reviews: 22,
+    sponsored: true,
+    discountPercent: 15,
+    description: "A feature-packed headphone for those who want immersive sound, mobility, and versatility. With Bluetooth 5.3, over‑ear design, noise cancellation (if supported), and support for TF card (offline playback), the Air Max 2 is ideal for music lovers, travelers, students, or anyone who values flexibility — whether streaming from phone or listening offline. Great balance of convenience and high‑quality listening.",
+    descList: [
+      "Air Max 2 headphone unit",
+      " USB‑C charging cable",
+      " AUX (3.5 mm) audio cable (if model supports wired mode)",
+      " User manual / warranty card"
+    ],
+    descLiNote: ""
+  },
+  {
     id: "p1",
     name: "HP EliteBook 840 G5 TOUCHSCREEN Core i7- 16GB RAM/ITB SSD/Backlit Keyboard/FP Reader WIN 11 Pro+BAG",
     brand: "HP",

@@ -102,7 +102,7 @@
               <button class="btn-qty-minus" data-id="${item.id}" type="button">−</button>
               <input class="qty-input" data-id="${item.id}" type="number" value="${item.qty}" min="1">
               <button class="btn-qty-plus" data-id="${item.id}" type="button">+</button>
-              <button class="btn btn-sm btn-outline-danger text-danger remove-item ms-3" data-id="${item.id}">Remove</button>
+              <a class="btn btn-outline-danger btn-sm remove-item ms-3 d-flex" data-id="${item.id}"> <i class="bi bi-trash me-1"></i>Trash</a>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@
       updateItemQty(id, val);
     } else if (t.classList.contains('remove-item')) {
       const id = t.dataset.id;
-      if (confirm('Remove this item from your cart?')) removeItem(id);
+      if (confirm('Move this item to trash?')) removeItem(id);
     }
   });
 
